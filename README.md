@@ -5,7 +5,7 @@
 main.py
 
 ```python
-from commander.commander import Command, CommandParser
+from commander import Command, CommandParser
 
 command_parser = CommandParser(leading="--")
 command = Command(command_parser=command_parser)
@@ -44,3 +44,5 @@ $ python main.py calculator subtract --a 5 --b 6
 $ python main.py calculator multiply --a 5 --b 6
 $ python main.py calculator divide --a 5 --b 6
 ```
+### Note : a and b args for the calculators are right now not integers but strings
+### TODO : Use type hinting to cast types to corresponding types before invoking methods, also autogenerate help from docstring and other metadata
