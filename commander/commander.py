@@ -45,7 +45,7 @@ class Command(Singleton):
 
     def __call__(self, reference):
         name = self._command_name_from_reference(reference)
-        if callable(reference):
+        if type(reference) is not type:
             if name not in self.callable_store.keys():
                 self.callable_store[name] = reference
             else:
