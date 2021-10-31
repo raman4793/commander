@@ -5,31 +5,30 @@
 main.py
 
 ```python
-from commander import Command, CommandParser
+from commander import CommandBuilder
 
-command_parser = CommandParser(leading="--")
-command = Command(command_parser=command_parser)
+command = CommandBuilder.build()
 
 
 @command
 class Calculator:
 
-    def add(self, *, a, b):
+    def add(self, *, a: int, b: int = 5):
         print(f"{a} + {b} = {a + b}")
 
-    def subtract(self, *, a, b):
+    def subtract(self, *, a: int, b: int):
         print(f"{a} - {b} = {a - b}")
 
-    def multiply(self, *, a, b):
+    def multiply(self, *, a: int, b: int):
         print(f"{a} * {b} = {a * b}")
 
-    def divide(self, *, a, b):
+    def divide(self, *, a: int, b: int):
         print(f"{a} / {b} = {a / b}")
 
 
 @command
-def say_hi(*, name):
-    print(f"Hi, {name}")
+def test(*, a: int, b: int):
+    print(f"{a} + {b} = {a + b}")
     print("done")
 
 
@@ -44,5 +43,4 @@ $ python main.py calculator subtract --a 5 --b 6
 $ python main.py calculator multiply --a 5 --b 6
 $ python main.py calculator divide --a 5 --b 6
 ```
-### Note : a and b args for the calculators are right now not integers but strings
-### TODO : Use type hinting to cast types to corresponding types before invoking methods, also autogenerate help from docstring and other metadata
+## TODO : Autogenerate help from docstring
