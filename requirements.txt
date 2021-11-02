@@ -1,1 +1,0 @@
-git+https://github.com/raman4793/patterns.git@develop
