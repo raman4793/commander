@@ -1,4 +1,5 @@
 from setuptools import setup
+from pip._internal.req import parse_requirements
 
 setup(
     name='commander',
@@ -9,9 +10,8 @@ setup(
     author='Ram',
     author_email='heath.raman@gmail.com',
     license='MIT',
-    install_requires=[],
-    packages=['commander'
-              ],
+    install_requires=[str(ir.requirement) for ir in parse_requirements("requirements.txt", session="hack")],
+    packages=['commander'],
     package_data={},
     zip_safe=False
 )
