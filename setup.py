@@ -9,7 +9,7 @@ setup(
     author='Ram',
     author_email='heath.raman@gmail.com',
     license='MIT',
-    install_requires=["git+https://github.com/raman4793/patterns.git@develop"],
+    install_requires=[],
     packages=['commander'],
     package_data={},
     zip_safe=False
